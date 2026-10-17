@@ -1,0 +1,315 @@
+/* --- Reset & Base Styles --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: #f8f9fa;
+    color: #212529;
+    line-height: 1.6;
+}
+
+/* --- Header & Navigation --- */
+.site-header {
+    background-color: #1a252f;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.logo img {
+    max-height: 45px;
+    display: block;
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+}
+
+.menu > ul > li > a {
+    display: block;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 15px;
+    padding: 10px 18px;
+    border-radius: 6px;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Yêu cầu 2: Menu có hover */
+.menu > ul > li > a:hover {
+    color: #ffe600;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* --- Banner Section --- */
+.banner {
+    position: relative;
+    width: 100%;
+    max-height: 450px;
+    overflow: hidden;
+}
+
+.banner img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    display: block;
+}
+
+.banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.6) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+}
+
+.banner-overlay h2 {
+    font-size: 38px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    margin-bottom: 8px;
+}
+
+.banner-overlay p {
+    font-size: 18px;
+    opacity: 0.9;
+}
+
+/* --- Layout Content --- */
+.main-content {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #1a252f;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #1a252f;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* --- Grid Sản Phẩm (Hiển thị 3 cột/dòng) --- */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.col {
+    display: flex;
+}
+
+/* Yêu cầu 4: Hiệu ứng khi di chuột qua box sản phẩm -> viền 2px nét liền màu đen #000 */
+.prod {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    
+    border: 2px solid transparent;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: all 0.25s ease-in-out;
+}
+
+.prod:hover {
+    border: 2px solid #000;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.prod-img-wrapper {
+    width: 100%;
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
+.prod .image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.prod:hover .image {
+    transform: scale(1.05);
+}
+
+.nameprod {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.nameprod a {
+    text-decoration: none;
+    color: #2c3e50;
+    transition: color 0.2s;
+}
+
+.nameprod a:hover {
+    color: #0056b3;
+}
+
+.price {
+    font-size: 18px;
+    font-weight: 700;
+    color: #e63946;
+}
+
+/* --- Form Đăng ký --- */
+.htsv {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+}
+
+.form-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 35px 40px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    border: 1px solid #e9ecef;
+    text-align: center;
+}
+
+.form-card h3 {
+    font-size: 22px;
+    color: #1a252f;
+    margin-bottom: 8px;
+}
+
+.form-desc {
+    font-size: 14px;
+    color: #6c757d;
+    margin-bottom: 25px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+#formDangKy input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+}
+
+#formDangKy input:focus {
+    border-color: #1a252f;
+    box-shadow: 0 0 0 3px rgba(26, 37, 47, 0.15);
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 12px;
+    background-color: #1a252f;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    margin-top: 5px;
+}
+
+.btn-submit:hover {
+    background-color: #2c3e50;
+}
+
+#thongbao {
+    margin-top: 15px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#thongbao.error {
+    color: #e63946;
+}
+
+#thongbao.success {
+    color: #2a9d8f;
+}
+
+/* --- Footer --- */
+.site-footer {
+    background-color: #1a252f;
+    color: #a0aec0;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    margin-top: 60px;
+}
+
+/* --- Responsive (Tự động co giãn trên thiết bị nhỏ) --- */
+@media (max-width: 900px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+    .header-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+}

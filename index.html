@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Thiết Bị Leo Núi - Đề Thi 5</title>
+    <!-- Thêm font chữ Google Font cho giao diện hiện đại -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Liên kết tới file CSS riêng -->
+   <link rel="stylesheet" href="Baitap.css">
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header class="site-header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="Logo Adventure">
+                </a>
+            </div>
+            <nav class="menu">
+                <ul>
+                    <li><a href="index.html">Trang chủ</a></li>
+                    <li><a href="#sanpham">Sản phẩm</a></li>
+                    <li><a href="#lienhe">Liên hệ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Banner hero -->
+    <section class="banner">
+        <img src="images/image-1.png" alt="Ảnh leo núi">
+        <div class="banner-overlay">
+            <h2>GEAR UP FOR THE SUMMIT</h2>
+            <p>Trang bị chuyên nghiệp cho mọi chuyến chinh phục đỉnh cao</p>
+        </div>
+    </section>
+
+    <!-- Phần sản phẩm chính -->
+    <main class="main-content">
+        <section class="products-section">
+            <h2 id="sanpham" class="section-title">SẢN PHẨM MỚI</h2>
+            
+            <div class="product-grid">
+                <!-- Sản phẩm 1 -->
+                <div class="col">
+                    <div class="prod">
+                        <div class="prod-img-wrapper">
+                            <img class="image" src="images/image-2.png" alt="Áo lưu niệm">
+                        </div>
+                        <h4 class="nameprod"><a href="#sanpham">ÁO LƯU NIỆM</a></h4>
+                        <p class="price">250K</p>
+                    </div>
+                </div>
+
+                <!-- Sản phẩm 2 -->
+                <div class="col">
+                    <div class="prod">
+                        <div class="prod-img-wrapper">
+                            <img class="image" src="images/image-3.png" alt="Quần leo núi">
+                        </div>
+                        <h4 class="nameprod"><a href="#sanpham">QUẦN LEO NÚI</a></h4>
+                        <p class="price">300K</p>
+                    </div>
+                </div>
+
+                <!-- Sản phẩm 3 -->
+                <div class="col">
+                    <div class="prod">
+                        <div class="prod-img-wrapper">
+                            <img class="image" src="images/image-4.png" alt="Balo du lịch">
+                        </div>
+                        <h4 class="nameprod"><a href="#sanpham">BALO DU LỊCH</a></h4>
+                        <p class="price">600K</p>
+                    </div>
+                </div>
+
+                <!-- Sản phẩm 4 -->
+                <div class="col">
+                    <div class="prod">
+                        <div class="prod-img-wrapper">
+                            <img class="image" src="images/image-5.png" alt="Áo khoác">
+                        </div>
+                        <h4 class="nameprod"><a href="#sanpham">ÁO KHOÁC</a></h4>
+                        <p class="price">950K</p>
+                    </div>
+                </div>
+
+                <!-- Sản phẩm 5 -->
+                <div class="col">
+                    <div class="prod">
+                        <div class="prod-img-wrapper">
+                            <img class="image" src="images/image-6.png" alt="Giày leo núi">
+                        </div>
+                        <h4 class="nameprod"><a href="#sanpham">GIÀY LEO NÚI</a></h4>
+                        <p class="price">1,300K</p>
+                    </div>
+                </div>
+
+                <!-- Sản phẩm 6 -->
+                <div class="col">
+                    <div class="prod">
+                        <div class="prod-img-wrapper">
+                            <img class="image" src="images/image-7.png" alt="Áo thể thao">
+                        </div>
+                        <h4 class="nameprod"><a href="#sanpham">ÁO THỂ THAO</a></h4>
+                        <p class="price">600K</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Đăng ký thông tin -->
+        <section class="htsv" id="lienhe">
+            <div class="form-card">
+                <h3>ĐĂNG KÝ THÔNG TIN</h3>
+                <p class="form-desc">Đăng ký để nhận tin tức và ưu đãi thiết bị leo núi mới nhất</p>
+
+                <form id="formDangKy">
+                    <div class="form-group">
+                        <input
+                            type="text"
+                            id="hoten"
+                            placeholder="Nhập họ và tên..."
+                            required
+                            minlength="2"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Nhập địa chỉ email..."
+                            required
+                        >
+                    </div>
+
+                    <button type="submit" class="btn-submit">Gửi thông tin</button>
+
+                    <p id="thongbao"></p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <p>&copy; 2026 Adventure Gear Co. Tất cả quyền được bảo lưu.</p>
+    </footer>
+
+    <!-- JavaScript Validate Form -->
+    <script>
+    document.getElementById("formDangKy").addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        const hoten = document.getElementById("hoten").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const thongbao = document.getElementById("thongbao");
+
+        if (hoten.length < 2) {
+            thongbao.className = "error";
+            thongbao.textContent = "Vui lòng nhập họ tên hợp lệ (tối thiểu 2 ký tự)!";
+            return;
+        }
+
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+            thongbao.className = "error";
+            thongbao.textContent = "Email không đúng định dạng!";
+            return;
+        }
+
+        thongbao.className = "success";
+        thongbao.textContent = "Đăng ký thành công! Cảm ơn bạn đã gửi thông tin.";
+    });
+    </script>
+</body>
+</html>
